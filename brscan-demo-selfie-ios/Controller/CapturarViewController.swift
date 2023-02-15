@@ -16,7 +16,7 @@ class CapturarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let captura = CapturaSViewController(
-            chave: "INSERIR A CHAVE AQUI",
+            chave: "INSERT KEY HERE",
             wizard: false,
             segurancaExtraEmulatorCheck: false,
             tentativasDeCaptura: 0
@@ -37,9 +37,9 @@ class CapturarViewController: UIViewController {
 
 extension CapturarViewController: CapturaSViewControllerDelegate {
     func sucessoDelegate(_ selfie: [String : Any]) {
-        let arquivo = selfie["selfie"] ?? "vazio"
-        let sessionId = selfie["sessionId"]  ?? "vazio"
-        let faceScan = selfie["faceScan"]  ?? "vazio"
+        let arquivo = selfie["selfie"] ?? "empty"
+        let sessionId = selfie["sessionId"]  ?? "empty"
+        let faceScan = selfie["faceScan"]  ?? "empty"
         let retorno = "selfie:\n\(arquivo)\n\nsessionId:\n\(sessionId)\n\nId:\n\(faceScan)"
         
         let controller = InicialViewController(retorno: retorno)
@@ -47,9 +47,9 @@ extension CapturarViewController: CapturaSViewControllerDelegate {
     }
 
     func erroDelegate(_ erro: [String : Any]) {
-        let error = erro["descricao"] ?? "vazio"
-        let codigo = erro["codigo"]  ?? "vazio"
-        let id = erro["id"]  ?? "vazio"
+        let error = erro["descricao"] ?? "empty"
+        let codigo = erro["codigo"]  ?? "empty"
+        let id = erro["id"]  ?? "empty"
         let retorno = "Erro:\n\(error)\n\nCódigo:\n\(codigo)\n\nId:\n\(id)"
 
         let controller = InicialViewController(retorno: retorno)

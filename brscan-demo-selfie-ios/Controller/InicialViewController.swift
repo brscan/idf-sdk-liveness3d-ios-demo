@@ -14,15 +14,15 @@ class InicialViewController: UIViewController{
         return true
     }
     
-    var retorno: String
+    var response: String
 
     
-    private let botaoChamarLiveness3d: UIButton = .botaoCustomizado(title: "Biometria Facial", textColor: .grey6, backgroundColor: .primary)
+    private let botaoChamarLiveness3d: UIButton = .botaoCustomizado(title: "Facial biometrics", textColor: .grey6, backgroundColor: .primary)
 
     
     
     init(retorno: String = "") {
-        self.retorno = retorno
+        self.response = retorno
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -38,7 +38,7 @@ class InicialViewController: UIViewController{
     
     
     func configureUI(){
-        retorno != "" ? print("RETORNO: \(retorno)") : nil
+        response != "" ? print("RESPONSE: \(response)") : nil
         
         
         botaoChamarLiveness3d.addTarget(self, action: #selector(ChamarLiveness3d), for: .touchUpInside)
